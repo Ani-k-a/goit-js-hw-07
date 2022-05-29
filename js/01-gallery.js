@@ -21,23 +21,28 @@ gallery.insertAdjacentHTML("beforeend", galleryItem(galleryItems));
 
 
 
-
 let instance = null;
-galleryItem.addEventListener("click", ev => {
+
+gallery.addEventListener("click", ev => {
     ev.preventDefault();
     if (ev.target.nodeName !== "IMG") {
         return;
     }
     instance = basicLightbox.create(
-        `<img src="${ev.target.dataset.source}" alt="${evt.target.alt}">`);
+        `<img src="${ev.target.dataset.source}" alt="${ev.target.alt}">`);
     instance.show();
     document.addEventListener('keydown', modalClose);
 });
 
-
-
-window.addEventListener('click', ev => {
+function modalClose ( ev ) {
     if (ev.code === "Escape" && instance.visible()) {
         instance.close();}
     document.removeEventListener('keydown', modalClose);
-});
+};
+
+
+// const modalClose = window.addEventListener('click', ev => {
+//     if (ev.code === "Escape" && instance.visible()) {
+//         instance.close();}
+//     document.removeEventListener('keydown', modalClose);
+// });
