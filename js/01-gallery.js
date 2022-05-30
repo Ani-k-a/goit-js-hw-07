@@ -15,10 +15,7 @@ function galleryItem() {
     return markup;
     
 };
-
 gallery.insertAdjacentHTML("beforeend", galleryItem());
-
-
 
 let instance = null;
 
@@ -38,10 +35,3 @@ function modalClose ( ev ) {
         instance.close();}
     document.removeEventListener('keydown', modalClose);
 };
-
-
-// const modalClose = window.addEventListener('click', ev => {
-//     if (ev.code === "Escape" && instance.visible()) {
-//         instance.close();}
-//     document.removeEventListener('keydown', modalClose);
-// });
