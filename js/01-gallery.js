@@ -1,7 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const gallery = document.querySelector(".gallery");
-galleryItem();
 
 function galleryItem() {
     const markup = galleryItems
@@ -11,13 +10,13 @@ function galleryItem() {
          <a class="gallery__link" href="${original}">
              <img class="gallery__image" src="${preview}" data-source="${original}" alt="${description}"/>
           </a>
-       </div>`,)
-    .join('');
+       </div>`)
+        .join('');
+    return markup;
     
-    gallery.innerHTML = markup;
 };
 
-gallery.insertAdjacentHTML("beforeend", galleryItem(galleryItems));
+gallery.insertAdjacentHTML("beforeend", galleryItem());
 
 
 
